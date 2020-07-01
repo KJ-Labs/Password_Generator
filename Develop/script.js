@@ -50,7 +50,7 @@ function generatePassword2() {
     if (answer === "yes" || answer === "no") {
       (answer === "yes") ? passwordCharSet += key_strings.uppercase : false;
     } else {
-      alert("You did not type Upper or Lower. Please try again");
+      alert("You did not type Yes or No. Please try again");
       // to limit user for limited count
       if (--max_count > 0)
         uppercaseconfirm()
@@ -64,7 +64,7 @@ function generatePassword2() {
     if (answer === "yes" || answer === "no") {
       (answer === "yes") ? passwordCharSet += key_strings.lowercase : false;
     } else {
-      alert("You did not type Upper or Lower. Please try again");
+      alert("You did not type Yes or No. Please try again");
       // to limit user for limited count
       if (--max_count > 0)
         lowercaseconfirm()
