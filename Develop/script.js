@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-let length  = 8;
+let length = 8;
 
 const key_strings = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
@@ -20,7 +20,7 @@ function generatePassword2() {
     var answer = numbersinpwd.toLowerCase();
     if (answer === "yes" || answer === "no") {
       (answer === "yes") ? passwordCharSet += key_strings.number : false
-      
+
     } else {
       alert("You did not type Yes or No. Please try again");
       // to limit user for limited count
@@ -72,30 +72,27 @@ function generatePassword2() {
   }
   lowercaseconfirm()
 
-  var length = window.prompt("Enter a number from 8 to 128 for password length.");
 
-function lengthconfirm() {
-  var answer = (prompt("Please tell me how long you want your password to be. It can be 8 to 128 characters long", ""));
-  if (answer <= 128 && answer >= 8) {
-    length = (answer <= 128 && answer >= 8) ? answer : false
-  } else {
-    alert("The number you input " + answer + " is not between 8 and 128");
-    // to limit user for limited count
-    if (--max_count > 0)
-    lengthconfirm()
+  function lengthconfirm() {
+    var answer = (prompt("Please tell me how long you want your password to be. It can be 8 to 128 characters long", ""));
+    if (answer <= 128 && answer >= 8) {
+      length = (answer <= 128 && answer >= 8) ? answer : false
+    } else {
+      alert("The number you input " + answer + " is not between 8 and 128");
+      // to limit user for limited count
+      if (--max_count > 0)
+        lengthconfirm()
+    }
   }
-}
-lengthconfirm();
-
+  lengthconfirm();
 
   var password = "";
   for (let i = 0; i < length; i++) {
-    password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
+        password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
+  
   }
   return password;
 }
-
-
 
 
 
@@ -105,6 +102,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
 
 }
 
