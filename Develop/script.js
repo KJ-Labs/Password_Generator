@@ -14,7 +14,19 @@ function generatePassword2() {
   var passwordCharSet = "";
 
   var max_count = 5;
-
+  function lengthconfirm() {
+    var answer = (prompt("Please tell me how long you want your password to be. It can be 8 to 128 characters long", ""));
+    if (answer <= 128 && answer >= 8) {
+      length = (answer <= 128 && answer >= 8) ? answer : false
+    } else {
+      alert("The number you input " + answer + " is not between 8 and 128");
+      // to limit user for limited count
+      if (--max_count > 0)
+        lengthconfirm()
+    }
+  }
+  lengthconfirm();
+  
   function showNumconfirm() {
     var numbersinpwd = (prompt("Do you want numbers in your password? Yes or No", ""));
     var answer = numbersinpwd.toLowerCase();
@@ -70,21 +82,10 @@ function generatePassword2() {
         lowercaseconfirm()
     }
   }
-  lowercaseconfirm()
+  lowercaseconfirm();
 
 
-  function lengthconfirm() {
-    var answer = (prompt("Please tell me how long you want your password to be. It can be 8 to 128 characters long", ""));
-    if (answer <= 128 && answer >= 8) {
-      length = (answer <= 128 && answer >= 8) ? answer : false
-    } else {
-      alert("The number you input " + answer + " is not between 8 and 128");
-      // to limit user for limited count
-      if (--max_count > 0)
-        lengthconfirm()
-    }
-  }
-  lengthconfirm();
+
 
   var password = "";
   for (let i = 0; i < length; i++) {
