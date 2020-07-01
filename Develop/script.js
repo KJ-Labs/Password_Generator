@@ -1,6 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+let length  = 8;
+
 const key_strings = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -17,7 +19,8 @@ function generatePassword2() {
     var numbersinpwd = (prompt("Do you want numbers in your password? Yes or No", ""));
     var answer = numbersinpwd.toLowerCase();
     if (answer === "yes" || answer === "no") {
-      passwordCharSet += key_strings.number
+      (answer === "yes") ? passwordCharSet += key_strings.number : false
+      
     } else {
       alert("You did not type Yes or No. Please try again");
       // to limit user for limited count
@@ -31,7 +34,7 @@ function generatePassword2() {
     var symbinpwd = (prompt("Do you want special characters in your password? Yes or No", ""));
     var answer = symbinpwd.toLowerCase();
     if (answer === "yes" || answer === "no") {
-      passwordCharSet += key_strings.symbol;
+      (answer === "yes") ? passwordCharSet += key_strings.symbol : false;
     } else {
       alert("You did not type Yes or No. Please try again");
       // to limit user for limited count
@@ -45,7 +48,7 @@ function generatePassword2() {
     var uppercaseinpwd = (prompt("Do you want uppercase letters in your password? Yes or No", ""));
     var answer = uppercaseinpwd.toLowerCase();
     if (answer === "yes" || answer === "no") {
-      passwordCharSet += key_strings.uppercase;
+      (answer === "yes") ? passwordCharSet += key_strings.uppercase : false;
     } else {
       alert("You did not type Upper or Lower. Please try again");
       // to limit user for limited count
@@ -56,10 +59,10 @@ function generatePassword2() {
   uppercaseconfirm();
 
   function lowercaseconfirm() {
-    var uppercaseinpwd = (prompt("Do you want lowercase letters in your password? Yes or No", ""));
-    var answer = uppercaseinpwd.toLowerCase();
+    var lowercaseinpwd = (prompt("Do you want lowercase letters in your password? Yes or No", ""));
+    var answer = lowercaseinpwd.toLowerCase();
     if (answer === "yes" || answer === "no") {
-      passwordCharSet += key_strings.lowercase;
+      (answer === "yes") ? passwordCharSet += key_strings.lowercase : false;
     } else {
       alert("You did not type Upper or Lower. Please try again");
       // to limit user for limited count
@@ -67,9 +70,22 @@ function generatePassword2() {
         lowercaseconfirm()
     }
   }
- 
+  lowercaseconfirm()
 
   var length = window.prompt("Enter a number from 8 to 128 for password length.");
+
+function lengthconfirm() {
+  var answer = (prompt("Please tell me how long you want your password to be. It can be 8 to 128 characters long", ""));
+  if (answer <= 128 && answer >= 8) {
+    length = (answer <= 128 && answer >= 8) ? answer : false
+  } else {
+    alert("The number you input " + answer + " is not between 8 and 128");
+    // to limit user for limited count
+    if (--max_count > 0)
+    lengthconfirm()
+  }
+}
+lengthconfirm();
 
 
   var password = "";
@@ -79,7 +95,7 @@ function generatePassword2() {
   return password;
 }
 
-console.log(generatePassword2());
+
 
 
 
@@ -94,4 +110,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
