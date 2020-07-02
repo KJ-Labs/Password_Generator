@@ -19,4 +19,4 @@ Finally, if the user selected no for numbers/special characters/lower case/upper
 
 Link to Website: https://kj-labs.github.io/Password_Generator/
 
-Screenshots:![Alt text](https://github.com/KJ-Labs/Password_Generator/edit/master/Screenshots.PNG "Screenshots")
+Screenshots:![Password Generator Screenshots](https://github.com/KJ-Labs/Password_Generator/blob/master/Screenshots.PNG "Screenshots")
