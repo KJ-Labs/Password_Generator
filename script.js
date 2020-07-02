@@ -26,7 +26,7 @@ function generatePassword2() {
     }
   }
   lengthconfirm();
-  
+
   function showNumconfirm() {
     var numbersinpwd = (prompt("Do you want numbers in your password? Yes or No", ""));
     var answer = numbersinpwd.toLowerCase();
@@ -86,25 +86,26 @@ function generatePassword2() {
 
 
 
-
-  var password = "";
-  for (let i = 0; i < length; i++) {
-        password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
-  
+  if (lowercaseinpwd === 'no') {
+    passwordCharSet += key_strings.lowercase; 
+    alert('default password')
+  } else {
+    var password = "";
+    for (let i = 0; i < length; i++) {
+          password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
+    }
+    return password;
   }
-  return password;
-}
+  // block of code to be executed if the condition is false
+  }
+  
 
-
-
+ 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword2();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
-
 }
 
 // Add event listener to generate button
