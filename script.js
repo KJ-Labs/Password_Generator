@@ -2,7 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 let length = 8;
-
 const key_strings = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -70,6 +69,7 @@ function generatePassword2() {
   }
   uppercaseconfirm();
 
+  //Validates if the user wanted lowercase letters in their password i
   function lowercaseconfirm() {
     var lowercaseinpwd = (prompt("Do you want lowercase letters in your password? Yes or No", ""));
     var answer = lowercaseinpwd.toLowerCase();
@@ -86,7 +86,7 @@ function generatePassword2() {
 
   console.log(passwordCharSet);
 
-
+//Validate if the user did not select any options, so a default can be applied for the selected length. 
   function passwordcheck() {
     if (passwordCharSet === "" || passwordCharSet === undefined || passwordCharSet === null) {
       (passwordCharSet === "" || passwordCharSet === undefined || passwordCharSet === null) ? passwordCharSet += key_strings.lowercase : false;
@@ -96,6 +96,7 @@ function generatePassword2() {
   }
   passwordcheck();
 
+  //Writes the password with the specified selections and length
   var password = "";
   for (let i = 0; i < length; i++) {
         password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
