@@ -1,6 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+//Pulls in all the possible character posibilities and defaults. 
 let length = 8;
 const key_strings = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
@@ -12,6 +14,7 @@ const key_strings = {
 function generatePassword2() {
   var passwordCharSet = "";
 
+//Validates how long the user wants their password to be
   var max_count = 5;
   function lengthconfirm() {
     var answer = (prompt("Please tell me how long you want your password to be. It can be 8 to 128 characters long", ""));
@@ -26,6 +29,7 @@ function generatePassword2() {
   }
   lengthconfirm();
 
+  //Validates if the user wanted numbers in their password 
   function showNumconfirm() {
     var numbersinpwd = (prompt("Do you want numbers in your password? Yes or No", ""));
     var answer = numbersinpwd.toLowerCase();
@@ -41,6 +45,7 @@ function generatePassword2() {
   }
   showNumconfirm();
 
+  //Validates if the user wanted special characters in their password 
   function showsymbconfirm() {
     var symbinpwd = (prompt("Do you want special characters in your password? Yes or No", ""));
     var answer = symbinpwd.toLowerCase();
@@ -55,6 +60,7 @@ function generatePassword2() {
   }
   showsymbconfirm();
 
+  //Validates if the user wanted uppercase letters in their password 
   function uppercaseconfirm() {
     var uppercaseinpwd = (prompt("Do you want uppercase letters in your password? Yes or No", ""));
     var answer = uppercaseinpwd.toLowerCase();
@@ -69,7 +75,7 @@ function generatePassword2() {
   }
   uppercaseconfirm();
 
-  //Validates if the user wanted lowercase letters in their password i
+  //Validates if the user wanted lowercase letters in their password 
   function lowercaseconfirm() {
     var lowercaseinpwd = (prompt("Do you want lowercase letters in your password? Yes or No", ""));
     var answer = lowercaseinpwd.toLowerCase();

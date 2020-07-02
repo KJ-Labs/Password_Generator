@@ -4,31 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Password Generator">
+    <meta name="keywords" content="Password, Generator, JavaScript">
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <article class="wrapper">
       <header>
         <h1>Password Generator</h1>
       </header>
-      <div class="card">
-        <div class="card-header">
+      <section class="card">
+        <section class="card-header">
           <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
+        </section>
+        <section class="card-body">
           <textarea
             readonly
             id="password"
             placeholder="Click the password button to create a new password."
             aria-label="Generated Password"
           ></textarea>
-        </div>
-        <div class="card-footer">
+        </section>
+        <footer class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
-        </div>
-      </div>
-    </div>
+        </footer>
+      </section>
+    </article>
     <script src="script.js"></script>
   </body>
 </html>
