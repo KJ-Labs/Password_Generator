@@ -84,23 +84,25 @@ function generatePassword2() {
   }
   lowercaseconfirm();
 
+  console.log(passwordCharSet);
 
 
-  if (lowercaseinpwd === 'no') {
-    passwordCharSet += key_strings.lowercase; 
-    alert('default password')
-  } else {
-    var password = "";
-    for (let i = 0; i < length; i++) {
-          password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
+  function passwordcheck() {
+    if (passwordCharSet === "" || passwordCharSet === undefined || passwordCharSet === null) {
+      (passwordCharSet === "" || passwordCharSet === undefined || passwordCharSet === null) ? passwordCharSet += key_strings.lowercase : false;
+      alert("You did not select anything. Applying default password");
+    } else {
     }
-    return password;
   }
-  // block of code to be executed if the condition is false
-  }
-  
+  passwordcheck();
 
- 
+  var password = "";
+  for (let i = 0; i < length; i++) {
+        password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
+  }
+  return password;
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword2();
